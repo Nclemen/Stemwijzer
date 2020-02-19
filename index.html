@@ -18,19 +18,37 @@
     <div class="container bg-white mt-5">
       <div class="row">
         <div class="col-12">
-          <h1 id="Qtitle">hello</h1>
-
+          <!-- <div class="navigation">
+            <button type="button" name="button" class="btn"><li class="fa-arrow-left"></li></button>
+          </div> -->
+          <div class="statement">
+            <h1 id="title">hellos</h1>
+            <p id="statement"></p>
+          </div>
+          <div class="">
+            <button type="button" class="btn btn-primary" name="button1" id="1" data-choice="Eens">Eens</button>
+            <button type="button" class="btn btn-primary" name="button2" id="2" data-choice="Geen van beide">Geen van beide</button>
+            <button type="button" class="btn btn-primary" name="button3" id="3" data-choice="Oneens">Oneens</button>
+            <button type="button" class="btn btn-secondary" name="button3" id="4">sla deze vraag over</button>
+          </div>
         </div>
       </div>
     </div>
+    <script src="js/script.js"></script>;
+
+    <script type="text/javascript">
+      document.getElementById("title").addEventListener("click", myFunction);
+
+      function myFunction () {
+        var title = document.getElementById('title');
+        var context = document.getElementById('statement');
+        var button = document.getElementById('1');
+
+        title.innerHTML = subjects[1].title;
+        context.innerHTML = subjects[1].statement;
+        // console.log(button.getAttribute("data-choice"))
+        button.setAttribute("data-statement", "0");
+      }
+    </script>
   </body>
-  <script type="text/javascript">
-document.getElementById("Qtitle").addEventListener("click", myFunction);
-
-    function myFunction () {
-      var title = document.getElementById('Qtitle')
-
-      title.innerHTML = 'henk';
-    }
-  </script>
 </html>
