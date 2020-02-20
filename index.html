@@ -21,11 +21,12 @@
           <!-- <div class="navigation">
             <button type="button" name="button" class="btn"><li class="fa-arrow-left"></li></button>
           </div> -->
-          <div class="statement">
+          <div id="stemwijzer" >
+          <div>
             <h1 id="title">hellos</h1>
             <p id="statement"></p>
           </div>
-          <div class="">
+
             <button type="button" class="btn btn-primary" name="button1" id="1" data-choice="Eens">Eens</button>
             <button type="button" class="btn btn-primary" name="button2" id="2" data-choice="Geen van beide">Geen van beide</button>
             <button type="button" class="btn btn-primary" name="button3" id="3" data-choice="Oneens">Oneens</button>
@@ -38,6 +39,15 @@
 
     <script type="text/javascript">
       document.getElementById("title").addEventListener("click", myFunction);
+      var b = Array.prototype.slice.call( document.getElementsByTagName("button"));
+      b.forEach((item, i) => {
+        item.addEventListener("click", button)
+      });
+      // console.log(b);
+
+      function button() {
+        console.log(this.getAttribute('data-choice'));
+      }
 
       function myFunction () {
         var title = document.getElementById('title');
