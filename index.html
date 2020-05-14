@@ -19,15 +19,39 @@
       <div class="row">
         <div class="col-12">
           <div class="navigation">
-            <button type="button" name="button" class="btn" id="5" data-direction="previous"><li class="fa-arrow-left"></li></button>
+            <button type="button" name="button" class="btn" id="5" data-direction="previous" onclick="backButton()"><li class="fa-arrow-left"></li></button>
           </div>
           <div id="start">
             <button type="button" name="buttonStart" class="btn btn-primary" onclick="start()">start</button>
           </div>
           <div id="stemwijzer" data-subject="0" >
+            <div class="row" id="filter">
+            <div class="input-group mb-3 col-6">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="seculierGroupSelect01">seculier</label>
+              </div>
+              <select class="custom-select" id="seculierinputGroupSelect01" onchange="showResult()">
+                <option selected>Choose...</option>
+                <option value="true" >ja</option>
+                <option value="false">nee</option>
+              </select>
+            </div>
+            <div class="input-group mb-3 col-6">
+              <div class="input-group-prepend">
+                <label class="input-group-text" for="zetelGroupSelect01">aantal zetels</label>
+              </div>
+              <select class="custom-select" id="zetelGroupSelect01" onchange="showResult()">
+                <option selected>Choose...</option>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+              </select>
+            </div>
+            </div>
           <div>
             <h1 id="title"></h1>
             <p id="statement"></p>
+            <label id="importanceChecker" class="checkbox-inline text-secondary"><input type="checkbox" id="myCheck"> I think that this is an important subject.</label>
           </div>
           <div id="btns">
             <button type="button" class="btn btn-primary" name="button1" id="1" data-choice="Eens" data-direction="next" onclick="agreeButton()">Eens</button>
