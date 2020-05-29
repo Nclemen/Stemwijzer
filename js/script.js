@@ -4,6 +4,11 @@ var sub = 0;
 document.getElementById('stemwijzer').style.display = "none";
 document.getElementById('5').style.display = "none";
 
+      /**
+       * hides the start screen and shows question screen and triggers the updateSubject function.
+       *
+       *
+       */
       function start() {
           var stemwijzer = document.getElementById('stemwijzer');
           document.getElementById('stemwijzer').style.display = "";
@@ -12,6 +17,9 @@ document.getElementById('5').style.display = "none";
           document.getElementById('start').style.display = "none";
       }
 
+      /**
+       * saves choice in array, increases sub variable by one and triggers updateSubject function.
+       */
       function agreeButton(){
         var button = document.getElementById('buttonAgree');
         answer[sub] = 'pro';
@@ -21,6 +29,9 @@ document.getElementById('5').style.display = "none";
         updateSubject();
       }
 
+      /**
+       * saves choice in array, increases sub variable by one and triggers updateSubject function.
+       */
       function disagreeButton(){
         var button = document.getElementById('buttonDisgree');
         answer[sub] = 'contra';
@@ -30,6 +41,9 @@ document.getElementById('5').style.display = "none";
         updateSubject();
       }
 
+      /**
+       * saves choice in array, increases sub variable by one and triggers updateSubject function.
+       */
       function neitherButton(){
         var button = document.getElementById('buttonNeither');
         answer[sub] = 'none';
@@ -39,6 +53,9 @@ document.getElementById('5').style.display = "none";
         updateSubject();
       }
 
+      /**
+       * saves choice in array, increases sub variable by one and triggers updateSubject function.
+       */
       function skipButton(){
         var button = document.getElementById('buttonSkip');
         sub++;
@@ -46,6 +63,9 @@ document.getElementById('5').style.display = "none";
         updateSubject();
       }
 
+      /**
+       * decreases sub variable if sub does not equal 0 and triggers updateSubject function.
+       */
       function backButton(){
         var button = document.getElementById('5');
         if (sub != 0) {
@@ -60,7 +80,9 @@ document.getElementById('5').style.display = "none";
           start.style.display = "";
         }
       }
-
+      /**
+       * updates statement shown based on the variable sub.
+       */
       function updateSubject(){
           var title = document.getElementById('title');
           var context = document.getElementById('statement');
@@ -86,6 +108,9 @@ document.getElementById('5').style.display = "none";
           selectionHighlighter();
       }
 
+      /**
+       * shows what you choose previously.
+       */
       function selectionHighlighter () {
         console.log('running selectionHighlighter answer = ' + answer[sub]);
         switch (answer[sub]) {
@@ -111,6 +136,9 @@ document.getElementById('5').style.display = "none";
       }
       }
 
+      /**
+       * matches your opinions with those of the parties on all subjects based on the answers you've given and gives parties points if opinions match and triggers showResult function.
+       */
       function matchOpinions() {
         var partiesByOrder;
 
@@ -140,6 +168,9 @@ document.getElementById('5').style.display = "none";
         showResult();
       }
 
+      /**
+       *shows parties in order of most points and filters them on whether or not they're secular or has more seats than the amoutn specified in the filter.
+       */
       function showResult (){
         var container = document.createElement("OL");
         var filterSeculier = document.getElementById('seculierinputGroupSelect01').value;
@@ -172,6 +203,12 @@ document.getElementById('5').style.display = "none";
         document.getElementById("statement").appendChild(container);
       };
 
+
+      /**
+      * checks if parties are secular
+      * @param {object} partij - the party that is being checked on being secular
+      * @return {boolean} - true if party is secular; false if party not secular
+      */
       function checkSeculier(partij) {
         if (document.getElementById('seculierinputGroupSelect01').value === 'true') {
           var filterValue = true;

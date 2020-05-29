@@ -19,7 +19,7 @@
       <div class="row">
         <div class="col-12">
           <div class="navigation">
-            <button type="button" name="button" class="btn" id="5" data-direction="previous" onclick="backButton()"><li class="fa-arrow-left"></li></button>
+            <button type="button" name="button" class="btn" id="5" data-direction="previous" onclick="backButton()"><span class="glyphicon glyphicon-align-left" aria-hidden="true"></span></button>
           </div>
           <div id="start">
             <button type="button" name="buttonStart" class="btn btn-primary" onclick="start()">start</button>
@@ -63,74 +63,13 @@
         </div>
       </div>
     </div>
-    <script src="http://stemwijzer.dvc-icta.nl/testdata.js"></script>
+    <script src="js\test-data.js"></script>
     <script src="js\script.js"></script>
 
     <script type="text/javascript">
 
     document.getElementById('stemwijzer').style.display = "none";
 
-    // document.getElementById('2').style.display = "none";
-    // document.getElementById('3').style.display = "none";
-    // document.getElementById('4').style.display = "none";
-    // document.getElementById('5').style.display = "none";
-
-      // document.getElementById("title").addEventListener("click", builder);
-      // var a = [];
-      //
-      // buttonManagement();
-
-      // console.log(b);
-
-      // function buttonManagement() {
-      //   // var choice = this.getAttribute('data-choice');
-      //   var subInd = parseInt(stemwijzer.getAttribute("data-subject"));
-      //   var b = Array.prototype.slice.call( document.getElementsByTagName("button"));
-      //   b.forEach((item, i) => {
-      //     if (typeof a[subInd] != "undefined" && item.getAttribute("data-choice") == a[subInd]) {
-      //       item.setAttribute("class","btn btn-success");
-      //     } else if (item.getAttribute("id") == "4") {
-      //       item.setAttribute("class","btn btn-secondary");
-      //     } else {
-      //       item.setAttribute("class","btn btn-primary");
-      //     }
-      //     item.addEventListener("click", buttonAction);
-      //   });
-      // }
-
-      // function buttonAction() {
-      //   var choice = this.getAttribute('data-choice');
-      //   var subInd = parseInt(stemwijzer.getAttribute("data-subject"));
-      //   var id = this.getAttribute("id");
-      //   var direction = this.getAttribute('data-direction');
-      //
-      //   if (choice != null && id != 5) {
-      //     a[subInd] = choice;
-      //   }
-      //   builder(choice,direction);
-      //   buttonManagement();
-      // }
-
-      // function builder (c,d) {
-      //   var title = document.getElementById('title');
-      //   var context = document.getElementById('statement');
-      //   var stemwijzer = document.getElementById('stemwijzer');
-      //   var subInd = parseInt(stemwijzer.getAttribute("data-subject"));
-      //     if (typeof c == "string" || c == null) {
-      //       if (d == "next" ) {
-      //       subInd = subInd+1;
-      //       } else {
-      //       subInd = subInd-1;
-      //     }
-      //       if (subInd != 0) {
-      //         stemwijzer.setAttribute("data-subject", subInd);
-      //       }
-      //   }
-      //   // alert(typeof c);
-      //   // console.log(typeof c);
-      //   title.innerHTML = subInd+1 + "." + subjects[subInd].title;
-      //   context.innerHTML = subjects[subInd].statement;
-      // }
     </script>
   </body>
 </html>
